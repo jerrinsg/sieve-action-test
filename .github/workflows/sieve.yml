@@ -7,7 +7,7 @@ jobs:
   run-sieve:
     runs-on: macos-latest
     steps:  
-      - uses: ./
+      - uses: jerrinsg/sieve-action@HEAD
         with:
           controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/config.json
           controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/build.sh
