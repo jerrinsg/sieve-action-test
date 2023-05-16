@@ -1,6 +1,6 @@
 {
     "name": "kapp-controller",
-    "github_link": "git@github.com:carvel-dev/kapp-controller.git",
+    "github_link": "https://github.com/carvel-dev/kapp-controller.git",
     "commit": "8d8de5c2fb080a23db604e1c4f4c0f29a4b13ca0",
     "kubernetes_version": "v1.24.10",
     "client_go_version": "v0.25.6",
