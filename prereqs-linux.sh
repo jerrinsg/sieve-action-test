@@ -7,3 +7,7 @@ wget https://raw.githubusercontent.com/vmware-tanzu/carvel-kapp-controller/83fff
 chmod a+x ./install-deps.sh
 ./install-deps.sh
 cd $curDir
+ytt --version
+kapp --version
+kbld --version
+vendir --version
