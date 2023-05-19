@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 brew install coreutils
 curDir=`pwd`
 cd /tmp
