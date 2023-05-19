@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 sudo apt-get install -y coreutils
 curDir=`pwd`
 cd /tmp
