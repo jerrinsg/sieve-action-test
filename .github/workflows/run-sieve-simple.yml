@@ -1,4 +1,4 @@
-name: 'Test Sieve GitHub action'
+name: 'Test a simple Sieve GitHub action'
 
 on:
   workflow_dispatch:
