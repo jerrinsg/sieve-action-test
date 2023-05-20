@@ -5,7 +5,7 @@ on:
   
 jobs:
   run-sieve:
-    uses: jerrinsg/sieve/.github/workflows/sieve-run-ubuntu-reusable.yml@main
+    uses: jerrinsg/sieve/.github/workflows/sieve-run-reusable.yml@main
     with:
       platform-os: ubuntu-latest
       controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/config.json
