@@ -8,13 +8,13 @@ jobs:
     uses: jerrinsg/sieve/.github/workflows/run-sieve.yml@main
     with:
       platform-os: macos-latest
-      controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/config.json
-      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/build-macos.sh
-      controller_dockerfile: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/Dockerfile
-      controller_deployment: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/release.yml
-      controller_script: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/deploy.sh
+      controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/config.json
+      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/build-macos.sh
+      controller_dockerfile: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/Dockerfile
+      controller_deployment: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/release.yml
+      controller_script: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/deploy.sh
       workload_name: scale-up-down
-      test_file: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/test.py
+      test_file: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/test.py
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
