@@ -15,7 +15,6 @@ jobs:
       controller_script: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/deploy-simple.sh
       workload_name: create
       test_file: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/test-app.py
-      test_prereqs: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/prereqs-linux.sh
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
