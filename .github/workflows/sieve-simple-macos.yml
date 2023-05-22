@@ -5,17 +5,16 @@ on:
   
 jobs:
   run-sieve:
-    uses: jerrinsg/sieve/.github/workflows/sieve-run-reusable.yml@main
+    uses: jerrinsg/sieve/.github/workflows/run-sieve.yml@main
     with:
       platform-os: macos-latest
       controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/config.json
-      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/build.sh
+      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/build-macos.sh
       controller_dockerfile: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/Dockerfile
       controller_deployment: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/release.yml
       controller_script: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/deploy-simple.sh
       workload_name: create
       test_file: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/test-app.py
-      test_prereqs: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/prereqs.sh
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
