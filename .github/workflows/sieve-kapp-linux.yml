@@ -1,21 +1,20 @@
-name: 'Test Sieve GitHub action (kapp-controller) on macOS'
+name: 'Test Sieve GitHub action (kapp-controller) on Linux'
 
 on:
   workflow_dispatch:
   
 jobs:
   run-sieve:
-    uses: jerrinsg/sieve/.github/workflows/sieve-run-reusable.yml@main
+    uses: jerrinsg/sieve/.github/workflows/run-sieve.yml@main
     with:
       platform-os: linux-latest
       controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/config.json
-      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/build.sh
+      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/build-linux.sh
       controller_dockerfile: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/Dockerfile
       controller_deployment: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/release.yml
       controller_script: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/deploy.sh
       workload_name: scale-up-down
       test_file: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/test.py
-      test_prereqs: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/prereqs-linux.sh
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
