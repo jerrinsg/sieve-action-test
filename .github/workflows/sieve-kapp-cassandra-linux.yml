@@ -1,4 +1,4 @@
-name: 'Test Sieve GitHub action on Linux'
+name: 'Test Sieve GitHub action (kapp-controller) on Linux (cassandra deployment)'
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ jobs:
       platform-os: ubuntu-latest
       controller-name: kapp-controller
       github-repo: https://github.com/jerrinsg/sieve-action-test.git
-      subdirectory: kapp-controller-simple
-      workload_name: create
+      subdirectory: kapp-controller
+      workload_name: scale-up-down
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
