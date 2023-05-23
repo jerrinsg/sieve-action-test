@@ -10,14 +10,14 @@ from sieve_common.common import RUNNING, TERMINATED
 
 test_cases = {
     "recreate": new_built_in_workload()
-    .cmd("kubectl apply -f https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/cassandra-operator/cdc-1.yaml")
+    .cmd("kubectl apply -f examples/sieve-action-test/cassandra-operator/test/cdc-1.yaml")
     .wait_for_pod_status("cassandra-test-cluster-dc1-rack1-0", RUNNING)
     .cmd("kubectl delete CassandraDataCenter cassandra-datacenter")
     .wait_for_pod_status("cassandra-test-cluster-dc1-rack1-0", TERMINATED, 10)
-    .cmd("kubectl apply -f https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/cassandra-operator/test/cdc-1.yaml")
+    .cmd("kubectl apply -f examples/sieve-action-test/cassandra-operator/test/cdc-1.yaml")
     .wait_for_pod_status("cassandra-test-cluster-dc1-rack1-0", RUNNING),
     "scaledown-scaleup": new_built_in_workload()
-    .cmd("kubectl apply -f https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/cassandra-operator/test/cdc-2.yaml")
+    .cmd("kubectl apply -f examples/sieve-action-test/cassandra-operator/test/cdc-2.yaml")
     .wait_for_pod_status("cassandra-test-cluster-dc1-rack1-1", RUNNING, 200)
     .cmd(
         'kubectl patch CassandraDataCenter cassandra-datacenter --type merge -p=\'{"spec":{"nodes":1}}\''
@@ -33,7 +33,7 @@ test_cases = {
     )
     .wait_for_pod_status("cassandra-test-cluster-dc1-rack1-1", RUNNING, 150),
     "scaledown-scaleup-brittle": new_built_in_workload()
-    .cmd("kubectl apply -f https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/cassandra-operator/test/cdc-2.yaml")
+    .cmd("kubectl apply -f examples/sieve-action-test/cassandra-operator/test/cdc-2.yaml")
     .wait_for_pod_status("cassandra-test-cluster-dc1-rack1-1", RUNNING, 200)
     .cmd(
         'kubectl patch CassandraDataCenter cassandra-datacenter --type merge -p=\'{"spec":{"nodes":1}}\''
