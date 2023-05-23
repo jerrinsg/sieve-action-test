@@ -8,13 +8,10 @@ jobs:
     uses: jerrinsg/sieve/.github/workflows/run-sieve.yml@main
     with:
       platform-os: ubuntu-latest
-      controller_config: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/config.json
-      controller_build: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/build-linux.sh
-      controller_dockerfile: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/Dockerfile
-      controller_deployment: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/release.yml
-      controller_script: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/deploy-simple.sh
+      controller-name: kapp-controller
+      github-repo: https://github.com/jerrinsg/sieve-action-test.git
+      subdirectory: kapp-controller-simple
       workload_name: create
-      test_file: https://raw.githubusercontent.com/jerrinsg/sieve-action-test/main/kapp-controller/test-app.py
     secrets:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
