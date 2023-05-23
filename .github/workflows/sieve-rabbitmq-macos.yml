@@ -1,4 +1,4 @@
-name: 'Test Sieve GitHub action with rabbitmq-operator on Linux'
+name: 'Test Sieve GitHub action with rabbitmq-operator on MacOS'
 
 on:
   workflow_dispatch:
