@@ -10,6 +10,7 @@ jobs:
       platform-os: ubuntu-latest
       controller-name: kapp-controller
       github-repo: https://github.com/jerrinsg/sieve-action-test.git
+      github-ref: main
       subdirectory: kapp-controller-simple
       workload_name: create
     secrets:
