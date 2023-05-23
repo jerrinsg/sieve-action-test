@@ -9,7 +9,7 @@
     "vendored_sieve_client_path": "vendor/sieve.client",
     "dockerfile_path": "Dockerfile",
     "controller_image_name": "kapp-controller:latest",
-    "test_command": "python3 examples/kapp-controller-simple/test/test.py",
+    "test_command": "python3 examples/kapp-controller/test/test.py",
     "custom_resource_definitions": [
         "internalpackagemetadata",
         "internalpackage",
@@ -22,5 +22,5 @@
     },
     "controller_pod_label": "kapp-controller",
     "container_name": "kapp-controller",
-    "controller_deployment_file_path": "examples/kapp-controller-simple/deploy/release.yml"
+    "controller_deployment_file_path": "examples/kapp-controller/deploy/release.yml"
 }
