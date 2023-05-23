@@ -1,0 +1,17 @@
+name: 'Test Sieve GitHub action with rabbitmq-operator on Linux'
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  run-sieve:
+    uses: jerrinsg/sieve/.github/workflows/run-sieve.yml@main
+    with:
+      platform-os: macos-latest
+      controller-name: rabbitmq-operator
+      github-repo: https://github.com/jerrinsg/sieve-action-test.git
+      subdirectory: rabbitmq-operator
+      workload_name: recreate
+    secrets:
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
