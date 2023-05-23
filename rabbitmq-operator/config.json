@@ -6,7 +6,7 @@
     "client_go_version": "v0.20.2",
     "dockerfile_path": "Dockerfile",
     "controller_image_name": "rabbitmq/rabbitmq-operator:latest",
-    "test_command": "python3 examples/sieve-action-test/rabbitmq-operator/test/test.py",
+    "test_command": "python3 examples/rabbitmq-operator/test/test.py",
     "custom_resource_definitions": [
         "rabbitmqcluster"
     ],
@@ -14,7 +14,7 @@
         "controllers/rabbitmqcluster_controller.go": "github.com/rabbitmq/cluster-operator/controllers.(*RabbitmqClusterReconciler).Reconcile"
     },
     "controller_pod_label": "rabbitmq-operator",
-    "controller_deployment_file_path": "examples/sieve-action-test/rabbitmq-operator/deploy/cluster-operator.yaml",
+    "controller_deployment_file_path": "examples/rabbitmq-operator/deploy/cluster-operator.yaml",
     "test_setting": {
         "resize-pvc": {
             "use_csi_driver": true

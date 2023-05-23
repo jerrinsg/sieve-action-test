@@ -12,7 +12,7 @@ case "$(uname -sr)" in
      ;;
 
    *)
-     echo 'Other OS' 
+     echo 'Unsupported OS'; exit 1;
      ;;
 esac
 

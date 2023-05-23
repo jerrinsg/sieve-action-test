@@ -10,11 +10,11 @@ from sieve_common.common import RUNNING, TERMINATED
 
 test_cases = {
     "recreate": new_built_in_workload()
-    .cmd("kubectl apply -f examples/sieve-action-test/rabbitmq-operator/test/rmqc-1.yaml")
+    .cmd("kubectl apply -f examples/rabbitmq-operator/test/rmqc-1.yaml")
     .wait_for_pod_status("rabbitmq-cluster-server-0", RUNNING)
     .cmd("kubectl delete RabbitmqCluster rabbitmq-cluster")
     .wait_for_pod_status("rabbitmq-cluster-server-0", TERMINATED)
-    .cmd("kubectl apply -f examples/sieve-action-test/rabbitmq-operator/test/rmqc-1.yaml")
+    .cmd("kubectl apply -f examples/rabbitmq-operator/test/rmqc-1.yaml")
     .wait_for_pod_status("rabbitmq-cluster-server-0", RUNNING),
 }
 
