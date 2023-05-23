@@ -6,11 +6,11 @@ sieve_root = os.path.dirname(os.path.dirname(os.path.dirname(current)))
 sys.path.append(sieve_root)
 
 from sieve_test_driver.test_framework import new_built_in_workload
-from sieve_common.common import RUNNING, TERMINATED
+from sieve_common.common import RUNNING
 
 test_cases = {
     "create": new_built_in_workload()
-    .cmd("kubectl apply -f examples/kapp-controller/test/app.yml")
+    .cmd("kubectl apply -f https://raw.githubusercontent.com/carvel-dev/kapp-controller/develop/examples/simple-app-git/1.yml")
     .wait_for_pod_status("simple-app-*", RUNNING),
 }
 

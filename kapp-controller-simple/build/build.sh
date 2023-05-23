@@ -1,6 +1,22 @@
 #!/bin/bash
 set -x
-sudo apt-get install -y coreutils
+
+# Install dependencies
+case "$(uname -sr)" in
+   Darwin*)
+     brew install coreutils
+     ;;
+
+   Linux*)
+     sudo apt-get install -y coreutils
+     ;;
+
+   *)
+     echo 'Other OS' 
+     ;;
+esac
+
+
 curDir=`pwd`
 cd /tmp
 wget https://raw.githubusercontent.com/vmware-tanzu/carvel-kapp-controller/83fffcfe99a65031b4170813acf94f8d5058b346/hack/dependencies.yml
