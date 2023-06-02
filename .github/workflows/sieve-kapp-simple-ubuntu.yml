@@ -5,7 +5,7 @@ on:
 
 jobs:
   run-sieve:
-    uses: jerrinsg/sieve/.github/workflows/run-sieve.yml@main
+    uses: sieve-project/sieve/.github/workflows/run-sieve.yml@main
     with:
       platform-os: ubuntu-latest
       controller-name: kapp-controller
